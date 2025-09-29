@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Building2, Code2, TrendingUp, Shield, Target, Users, Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
@@ -293,12 +294,12 @@ const Index = () => {
               © 2025 Divergent Capital LLC. All Rights Reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <button className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <Link to="/privacy-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Privacy Policy
-              </button>
-              <button className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              </Link>
+              <Link to="/terms" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Terms of Service
-              </button>
+              </Link>
             </div>
           </div>
         </div>
