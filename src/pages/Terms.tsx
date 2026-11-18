@@ -87,7 +87,7 @@ const Terms = () => {
           <p className="mb-4 text-muted-foreground">Questions about these Terms can be directed to:</p>
           <p className="mb-6 text-muted-foreground">
             <strong>Divergent Capital LLC</strong><br />
-            Email: <a href="mailto:erick@divergentcapitalllc.com" className="text-accent hover:underline">erick@divergentcapitalllc.com</a><br />
+            Email: <a href="mailto:admin@divergentcapitalllc.com" className="text-accent hover:underline">admin@divergentcapitalllc.com</a><br />
             Phone: <a href="tel:+17708159063" className="text-accent hover:underline">770-815-9063</a>
           </p>
 
