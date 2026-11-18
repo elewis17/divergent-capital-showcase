@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./divergent.css";
 
 const email = "admin@divergentcapitalllc.com";
-const leaseLens = "https://elewis17.github.io/lease-lens-dash/";
+const leaseLens = import.meta.env.VITE_LEASE_LENS_URL || "https://elewis17.github.io/lease-lens-dash/";
 
 function Wordmark() {
   return <a href="/" className="dc-wordmark" aria-label="Divergent Capital home">
