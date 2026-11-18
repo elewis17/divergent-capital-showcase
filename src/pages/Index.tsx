@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./divergent.css";
 
 const email = "admin@divergentcapitalllc.com";
-const leaseLens = "https://elewis17.github.io/lease-lens-dash/";
 
 function Wordmark() {
   return <a href="/" className="dc-wordmark" aria-label="Divergent Capital home">
@@ -68,43 +67,27 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="work" className="dc-work dc-shell">
-          <div className="dc-work-heading">
-            <p className="dc-label">Ventures</p>
-            <h2>What we’re building.</h2>
+        <section id="work" aria-labelledby="work-heading">
+          <div className="dc-work dc-shell">
+            <div className="dc-work-heading">
+              <p className="dc-label">Ventures</p>
+              <h2 id="work-heading">What we’re building.</h2>
+            </div>
           </div>
-          <article className="dc-lease">
-            <div className="dc-lease-art" aria-hidden="true">
-              <div className="dc-document">
-                <div className="dc-document-title"><span>Lease Lens</span><span>Deal analysis</span></div>
-                <div><span>Property</span><i /></div>
-                <div><span>Lease terms</span><i /></div>
-                <div><span>Income &amp; costs</span><i /></div>
-                <div className="dc-document-note">Illustrative worksheet</div>
+          <div className="dc-alfred">
+            <div className="dc-shell dc-alfred-layout">
+              <div>
+                <p className="dc-label">Engineering showcase</p>
+                <h2>Alfred<span>.</span></h2>
+                <p>Explore the projects and applications behind Divergent Capital in our project directory.</p>
+                <a className="dc-inline" href="/alfred">Enter Alfred <ArrowUpRight aria-hidden="true" /></a>
               </div>
-            </div>
-            <div className="dc-venture-copy">
-              <p className="dc-label">Real estate software</p>
-              <h3>Lease Lens</h3>
-              <p>A real estate application for reviewing properties, organizing lease information, and analyzing deals.</p>
-              <a className="dc-inline" href={leaseLens}>Open Lease Lens <ArrowUpRight aria-hidden="true" /></a>
-            </div>
-          </article>
-        </section>
-
-        <section className="dc-alfred">
-          <div className="dc-shell dc-alfred-layout">
-            <div>
-              <p className="dc-label">Engineering showcase</p>
-              <h2>Alfred<span>.</span></h2>
-              <p>Explore the projects and applications behind Divergent Capital in our project directory.</p>
-              <a className="dc-inline" href="/alfred">Enter Alfred <ArrowUpRight aria-hidden="true" /></a>
-            </div>
-            <div className="dc-alfred-art" aria-hidden="true">
-              <div className="dc-orbit dc-orbit-outer" />
-              <div className="dc-orbit dc-orbit-inner" />
-              <div className="dc-orbit dc-orbit-core" />
-              <span>A</span>
+              <div className="dc-alfred-art" aria-hidden="true">
+                <div className="dc-orbit dc-orbit-outer" />
+                <div className="dc-orbit dc-orbit-inner" />
+                <div className="dc-orbit dc-orbit-core" />
+                <span>A</span>
+              </div>
             </div>
           </div>
         </section>
