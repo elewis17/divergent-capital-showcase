@@ -97,8 +97,8 @@ export default function Index() {
             <div>
               <p className="dc-label">Engineering showcase</p>
               <h2>Alfred<span>.</span></h2>
-              <p>Explore the projects and applications behind Divergent Capital in our private directory.</p>
-              <a className="dc-inline" href="https://divergent-capital-alfred-staging.humorousgleam2.chatgpt.site/alfred/access/">Enter Alfred <ArrowUpRight aria-hidden="true" /></a>
+              <p>Explore the projects and applications behind Divergent Capital in our project directory.</p>
+              <a className="dc-inline" href="/alfred">Enter Alfred <ArrowUpRight aria-hidden="true" /></a>
             </div>
             <div className="dc-alfred-art" aria-hidden="true">
               <div className="dc-orbit dc-orbit-outer" />
