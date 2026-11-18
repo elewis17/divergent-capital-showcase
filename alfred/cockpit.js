@@ -2,13 +2,17 @@
 (function(){"use strict";
 var RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* arrival — car, waterfall, cave; then the network */
-var arrival=document.getElementById("arrival"),arrT=null,arrDone=true;
-function endArrival(){if(arrDone)return;arrDone=true;clearTimeout(arrT);arrival.classList.add("done");setTimeout(function(){arrival.style.display="none"},580)}
-function playArrival(){arrDone=false;arrival.style.display="";arrival.classList.remove("done");arrT=setTimeout(endArrival,RM?900:4000)}
+var arrival=document.getElementById("arrival"),arrT=null,arrHideT=null,arrDone=true;
+function endArrival(){if(arrDone)return;arrDone=true;clearTimeout(arrT);arrival.classList.add("done");arrHideT=setTimeout(function(){arrival.style.display="none"},580)}
+function playArrival(){clearTimeout(arrT);clearTimeout(arrHideT);arrDone=false;arrival.style.display="";arrival.classList.remove("done");arrT=setTimeout(endArrival,RM?900:4000)}
 function replayArrival(){var c=arrival.cloneNode(true);c.classList.remove("done");c.style.display="";arrival.parentNode.replaceChild(c,arrival);arrival=c;arrival.addEventListener("click",endArrival);playArrival()}
 arrival.addEventListener("click",endArrival);
 addEventListener("keydown",function(e){if(!arrDone&&(e.key==="Enter"||e.key===" "||e.key==="Escape")&&document.activeElement===document.body)endArrival()});
-arrival.style.display="none";
+if (RM) arrival.style.display = "none";
+else playArrival();
+addEventListener("pageshow", function(event) {
+  if (event.persisted && !RM) replayArrival();
+});
 /* clock */
 function pad(x){return(x<10?"0":"")+x}function tick(){var d=new Date();document.getElementById("clock").textContent=pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds());}tick();setInterval(tick,1000);
 /* glow follows pointer */
