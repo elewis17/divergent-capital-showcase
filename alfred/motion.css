@@ -1,0 +1,77 @@
+:root {
+  --alfred-enter-ms: 380;
+  --alfred-return-ms: 320;
+  --alfred-ease: cubic-bezier(.28, .74, .22, 1);
+  --alfred-return-ease: cubic-bezier(.32, .08, .36, 1);
+  scrollbar-gutter: stable;
+}
+
+#close { min-height: 44px; }
+.irow .nm { justify-self: start; }
+.shero h2 { width: fit-content; }
+#sc .sheet { padding-bottom: env(safe-area-inset-bottom); }
+#sc .veil { opacity: .85; }
+
+::view-transition { pointer-events: none; }
+html[data-alfred-motion]::view-transition-group(*) {
+  animation-duration: calc(var(--alfred-enter-ms) * 1ms);
+  animation-timing-function: var(--alfred-ease);
+}
+html[data-alfred-motion="return"]::view-transition-group(*) {
+  animation-duration: calc(var(--alfred-return-ms) * 1ms);
+  animation-timing-function: var(--alfred-return-ease);
+}
+::view-transition-group(alfred-app) { z-index: 1; }
+::view-transition-old(alfred-app),
+::view-transition-new(alfred-app) { object-fit: contain; }
+
+html[data-alfred-motion]::view-transition-old(root),
+html[data-alfred-motion]::view-transition-new(root) {
+  animation-name: alfred-surface-out;
+  mix-blend-mode: normal;
+}
+html[data-alfred-motion]::view-transition-new(root) { animation-name: alfred-surface-in; }
+html[data-alfred-motion="return"]::view-transition-new(root) { animation-name: alfred-directory-in; }
+html[data-alfred-motion="enter"] #sc [data-reveal] {
+  animation: alfred-reveal 330ms var(--alfred-ease) both;
+}
+html[data-alfred-motion="enter"] #sc .shero .k {
+  animation: alfred-reveal 320ms var(--alfred-ease) both;
+}
+html[data-alfred-motion="enter"] #sc .stage,
+html[data-alfred-motion="enter"] #sc .vault {
+  animation-duration: 380ms;
+}
+
+@keyframes alfred-surface-out { to { opacity: 0; transform: scale(.993); } }
+@keyframes alfred-surface-in { from { opacity: 0; transform: scale(1.005); } }
+@keyframes alfred-directory-in { from { opacity: 0; transform: scale(.993); } }
+@keyframes alfred-reveal {
+  0%, 20% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  :root { --alfred-enter-ms: 340; --alfred-return-ms: 290; }
+  html[data-alfred-motion="enter"] #sc [data-reveal] { animation-duration: 340ms; }
+  .shero { padding-top: 34px; }
+  .scin { padding-inline: 20px; }
+  .irow .arr { grid-area: 1 / 3 / 3 / 4; }
+  #tin { min-width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-alfred-motion]::view-transition-group(*),
+  html[data-alfred-motion]::view-transition-old(*),
+  html[data-alfred-motion]::view-transition-new(*),
+  html[data-alfred-motion="enter"] #sc [data-reveal],
+  html[data-alfred-motion="enter"] #sc .shero .k { animation: none; }
+}
+
+/* Opt-in for the first content surface of an app reached from Alfred. */
+@media (prefers-reduced-motion: no-preference) {
+  .alfred-arrival { animation: alfred-destination-in 270ms var(--alfred-ease) both; }
+}
+@keyframes alfred-destination-in {
+  from { opacity: .65; transform: translateY(5px); }
+}
