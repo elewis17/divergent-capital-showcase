@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+<script>
+if (/^\/dealstack\/(?:demo\/)?decisions\/[0-9a-f-]{36}\/memo\/?$/i.test(location.pathname)) {
+  const route = location.pathname + location.search + location.hash;
+  location.replace('/dealstack/?pages-route=' + encodeURIComponent(route));
+}
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
