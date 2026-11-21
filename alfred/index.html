@@ -68,7 +68,7 @@ h1{font-family:var(--disp);font-weight:400;font-size:clamp(52px,9vw,96px);line-h
 .hint{text-align:center;font-family:var(--serif);font-style:italic;color:var(--faint);font-size:14.5px;margin:10px 0 4px}.hint b{color:var(--dim);font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.1em}
 /* index rows — no paragraphs */
 .rows{border-top:1px solid var(--line)}
-.irow{--mx:50%;position:relative;width:100%;display:grid;grid-template-columns:52px 1fr auto auto 28px;gap:16px;align-items:center;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line2);color:inherit;padding:20px 8px;overflow:hidden}
+.irow{text-decoration:none;--mx:50%;position:relative;width:100%;display:grid;grid-template-columns:52px 1fr auto auto 28px;gap:16px;align-items:center;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line2);color:inherit;padding:20px 8px;overflow:hidden}
 .irow:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx) 50%,rgba(61,220,151,.09),transparent 65%);opacity:0;transition:.3s;pointer-events:none}.irow:hover:before{opacity:1}.irow:hover .nm{color:#fff}.irow:hover .arr{transform:translateX(4px);color:var(--em)}
 .irow .no{font-family:var(--mono);font-size:11px;color:var(--em);letter-spacing:.15em}.irow .nm{font-family:var(--disp);font-size:clamp(21px,3.4vw,28px);transition:.2s}.irow .mt{font-family:var(--mono);font-size:13px;color:var(--dim);white-space:nowrap}.irow .mt b{color:var(--ink);font-weight:500}.irow .mt .a{color:var(--amber)}.irow .mt .g{color:var(--em)}
 .irow .st{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);white-space:nowrap}.irow .arr{font-size:20px;color:var(--faint);transition:.25s}
@@ -197,7 +197,7 @@ footer{margin-top:26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.
       <line class="flow" x1="500" y1="260" x2="180" y2="110"/><line class="flow" x1="500" y1="260" x2="822" y2="110"/><line class="flow" x1="500" y1="260" x2="500" y2="452"/>
       <circle cx="500" cy="260" r="57" fill="none" stroke="#2c3531"/><circle cx="500" cy="260" r="43" fill="#0b0e0c" stroke="#3a443f"/>
       <text class="coreT" x="500" y="256" text-anchor="middle">A</text><text class="coreS" x="500" y="282" text-anchor="middle">Alfred</text>
-      <g class="node" data-open="lease" tabindex="0" role="button" aria-label="Lease Lens"><circle class="ring" cx="180" cy="110" r="25"/><circle class="halo" cx="180" cy="110" r="20"/><circle class="cd" cx="180" cy="110" r="4.5"/><text x="180" y="80" text-anchor="middle">Lease Lens</text><text class="m" x="180" y="150" text-anchor="middle">Application</text></g>
+      <a href="/dealstack/" aria-label="Real Estate Portfolio" data-open="lease"><g class="node"><circle class="ring" cx="180" cy="110" r="25"/><circle class="halo" cx="180" cy="110" r="20"/><circle class="cd" cx="180" cy="110" r="4.5"/><text x="180" y="80" text-anchor="middle">Real Estate Portfolio</text><text class="m" x="180" y="150" text-anchor="middle">Application</text></g></a>
       <g class="node" data-open="capital" tabindex="0" role="button" aria-label="Divergent"><circle class="halo" cx="500" cy="66" r="20"/><circle class="cd" cx="500" cy="66" r="4.5"/><text x="500" y="36" text-anchor="middle">Divergent</text><text class="m" x="500" y="106" text-anchor="middle">Website</text></g>
       <g class="node" data-open="engineering" tabindex="0" role="button" aria-label="AI Company OS"><circle class="ring" cx="822" cy="110" r="25" style="animation-delay:1.3s"/><circle class="halo" cx="822" cy="110" r="20"/><circle class="cd" cx="822" cy="110" r="4.5"/><text x="822" y="80" text-anchor="middle">AI Company OS</text><text class="m" x="822" y="150" text-anchor="middle">Framework</text></g>
       <g class="node" data-open="knowledge" tabindex="0" role="button" aria-label="Knowledge"><circle class="halo" cx="180" cy="412" r="20"/><circle class="cd" cx="180" cy="412" r="4.5"/><text x="180" y="382" text-anchor="middle">Knowledge</text><text class="m" x="180" y="452" text-anchor="middle">Future space</text></g>
@@ -224,9 +224,9 @@ footer{margin-top:26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.
   </div></div>
 </div>
 
-<div class="term"><div class="in"><div id="tout" aria-live="polite"></div><div class="trow"><span class="pr">❯</span><input id="tin" autocomplete="off" spellcheck="false" placeholder="open lease lens · apps · help" aria-label="Find an application"/><button class="kbd" id="palbtn">⌘K</button></div></div></div>
+<div class="term"><div class="in"><div id="tout" aria-live="polite"></div><div class="trow"><span class="pr">❯</span><input id="tin" autocomplete="off" spellcheck="false" placeholder="open real estate portfolio · apps · help" aria-label="Find an application"/><button class="kbd" id="palbtn">⌘K</button></div></div></div>
 
 <div id="pal" role="dialog" aria-modal="true" aria-label="Commands"><div class="pbox"><input id="pin" autocomplete="off" spellcheck="false" placeholder="Command…" aria-label="Search commands"/><div class="plist" id="plist"></div><div class="pfoot"><span>↑↓</span><span>↵ run</span><span>esc</span></div></div></div>
 
-<script src="./cockpit.js?v=arrival-2" defer></script>
+<script src="./cockpit.js?v=portfolio-1" defer></script>
 </body></html>
